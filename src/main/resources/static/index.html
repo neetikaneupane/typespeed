@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Typing Speed Test - Typespeed</title>
+    <link rel="stylesheet" href="style.css" />
+    <style>
+        .user-info {
+            position: fixed;
+            top: 15px;
+            right: 20px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            z-index: 1001;
+        }
+        .username-display {
+            color: #5edfff;
+            font-weight: 600;
+        }
+        .logout-btn {
+            background: #ff5c5c;
+            color: white;
+            border: none;
+            padding: 6px 12px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-family: 'Roboto Mono', monospace;
+            transition: 0.3s;
+        }
+        .logout-btn:hover {
+            background: #ff3d3d;
+        }
+        .stats-section {
+            background: #1b3a63;
+            padding: 20px;
+            border-radius: 10px;
+            margin-top: 20px;
+        }
+        .stats-header {
+            font-size: 1.2rem;
+            color: #5edfff;
+            margin-bottom: 15px;
+            text-align: center;
+        }
+        .best-scores {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin-top: 10px;
+        }
+        .score-card {
+            background: #13294b;
+            padding: 15px;
+            border-radius: 8px;
+            text-align: center;
+        }
+        .score-card h4 {
+            color: #5edfff;
+            margin-bottom: 10px;
+            font-size: 0.9rem;
+        }
+        .score-card p {
+            margin: 5px 0;
+            font-size: 0.9rem;
+        }
+        .score-value {
+            color: #5edfff;
+            font-weight: 700;
+            font-size: 1.5rem;
+        }
+    </style>
+</head>
+<body>
+<header>
+    <div class="keyboard-logo">
+        <div class="key-row">
+            <div class="key"></div><div class="key"></div><div class="key"></div>
+        </div>
+        <div class="key-row">
+            <div class="key"></div><div class="key"></div><div class="key"></div>
+        </div>
+        <div class="spacebar"></div>
+    </div>
+    <h1>Typespeed</h1>
+    <div class="user-info" id="user-info" style="display: none;">
+        <span class="username-display" id="username-display"></span>
+        <button class="logout-btn" onclick="logout()">Logout</button>
+    </div>
+</header>
+
+<div class="container">
+    <div class="settings">
+        <div>
+            <label for="difficulty">Difficulty:</label>
+            <select id="difficulty">
+                <option value="easy">Easy</option>
+                <option value="medium" selected>Medium</option>
+                <option value="hard">Hard</option>
+            </select>
+        </div>
+        <div>
+            <label for="time-select">Time:</label>
+            <select id="time-select">
+                <option value="30">30s</option>
+                <option value="60" selected>60s</option>
+                <option value="120">120s</option>
+            </select>
+        </div>
+    </div>
+
+    <div class="test-header">
+        <div class="metric">
+            <p>WPM</p>
+            <span id="wpm">0</span>
+        </div>
+        <div class="metric">
+            <p>Accuracy</p>
+            <span id="accuracy">100%</span>
+        </div>
+        <div class="metric">
+            <p>Time</p>
+            <span id="time">60s</span>
+        </div>
+    </div>
+
+    <div class="progress-bar">
+        <div id="progress"></div>
+    </div>
+
+    <div class="typing-area" id="typing-text"></div>
+
+    <input type="text" id="hidden-input" autofocus />
+
+    <button id="reset-btn" title="Restart Test">⟳</button>
+
+    <div class="stats-section" id="stats-section" style="display: none;">
+        <div class="stats-header">Your Best Scores</div>
+        <div class="best-scores" id="best-scores"></div>
+    </div>
+</div>
+
+<script src="auth.js"></script>
+<script src="script.js"></script>
+<script>
+    // Check authentication on page load
+    window.addEventListener('DOMContentLoaded', () => {
+        if (isAuthenticated()) {
+            const user = getCurrentUser();
+            document.getElementById('username-display').textContent = user.username;
+            document.getElementById('user-info').style.display = 'flex';
+            loadBestScores();
+        } else {
+            window.location.href = 'login.html';
+        }
+    });
+
+    // Load and display best scores
+    async function loadBestScores() {
+        try {
+            const scores = await getUserBestResults();
+            const statsSection = document.getElementById('stats-section');
+            const bestScoresDiv = document.getElementById('best-scores');
+
+            if (scores && scores.length > 0) {
+                statsSection.style.display = 'block';
+                bestScoresDiv.innerHTML = scores.slice(0, 3).map(score => `
+            <div class="score-card">
+              <h4>${score.difficulty.toUpperCase()}</h4>
+              <div class="score-value">${score.wpm} WPM</div>
+              <p>Accuracy: ${score.accuracy.toFixed(0)}%</p>
+              <p>${score.duration}s test</p>
+            </div>
+          `).join('');
+            }
+        } catch (error) {
+            console.error('Failed to load best scores:', error);
+        }
+    }
+</script>
+</body>
+</html>
