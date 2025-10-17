@@ -2,6 +2,7 @@ package com.typespeedtest.controller;
 
 import com.typespeedtest.dto.TestResultRequest;
 import com.typespeedtest.dto.TestResultResponse;
+import com.typespeedtest.dto.TestResultStatsResponse;
 import com.typespeedtest.service.TestResultService;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -39,5 +40,12 @@ public class TestResultController {
         Long userId = (Long) authentication.getPrincipal();
         List<TestResultResponse> results = testResultService.getUserBestResults(userId);
         return ResponseEntity.ok(results);
+    }
+
+    @GetMapping("/user/stats")
+    public ResponseEntity<TestResultStatsResponse> getUserStats(Authentication authentication) {
+        Long userId = (Long) authentication.getPrincipal();
+        TestResultStatsResponse stats = testResultService.getUserStats(userId);
+        return ResponseEntity.ok(stats);
     }
 }

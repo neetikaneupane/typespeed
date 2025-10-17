@@ -102,3 +102,14 @@ async function getUserBestResults() {
         throw new Error('Failed to fetch best results');
     }
 }
+
+// Get user's statistics
+async function getUserStats() {
+    const response = await authenticatedFetch(`${API_BASE_URL}/results/user/stats`);
+
+    if (response.ok) {
+        return await response.json();
+    } else {
+        throw new Error('Failed to fetch statistics');
+    }
+}

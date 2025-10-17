@@ -19,7 +19,7 @@
             color: #5edfff;
             font-weight: 600;
         }
-        .logout-btn {
+        .logout-btn, .stats-btn {
             background: #ff5c5c;
             color: white;
             border: none;
@@ -28,9 +28,18 @@
             cursor: pointer;
             font-family: 'Roboto Mono', monospace;
             transition: 0.3s;
+            text-decoration: none;
+            display: inline-block;
+        }
+        .stats-btn {
+            background: #5edfff;
+            color: #0b1e38;
         }
         .logout-btn:hover {
             background: #ff3d3d;
+        }
+        .stats-btn:hover {
+            background: #4ac9e8;
         }
         .stats-section {
             background: #1b3a63;
@@ -86,6 +95,7 @@
     <h1>Typespeed</h1>
     <div class="user-info" id="user-info" style="display: none;">
         <span class="username-display" id="username-display"></span>
+        <a href="stats.html" class="stats-btn">Statistics</a>
         <button class="logout-btn" onclick="logout()">Logout</button>
     </div>
 </header>
