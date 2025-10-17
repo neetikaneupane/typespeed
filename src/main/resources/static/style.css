@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
 
 * {
     box-sizing: border-box;
@@ -9,12 +9,14 @@
 body {
     background: #0b1e38;
     color: #e6eaff;
-    font-family: 'Roboto Mono', monospace;
+    font-family: 'Poppins', monospace;
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    height: 150vh;
     padding: 20px;
+    padding-top: 200px;
+
 }
 /* Fixed header at the top */
 header {
