@@ -35,10 +35,64 @@ This project was made Intellij IDE, so i would suggest you to run it using intel
 <img width="1886" height="705" alt="image" src="https://github.com/user-attachments/assets/904ebaf4-9cf3-4dbd-a174-cfec18d7679a" />
 <img width="1871" height="828" alt="image" src="https://github.com/user-attachments/assets/680b078a-4a90-4de1-a049-af788b24aee7" />
 <img width="1719" height="712" alt="image" src="https://github.com/user-attachments/assets/a9adedf9-e2a1-4c90-9de1-06a34d44fb28" />
+---
 
+## Architecture & Tech Stack
 
+| Layer | Technology | Purpose |
+|-------|------------|---------|
+| Frontend | HTML, CSS, JavaScript | UI, user interactions, real-time typing logic |
+| Backend | Java / Spring Boot  | API endpoints, data persistence |
+| Database | MySQL | Store user profiles, test results, history |
+| Build / Tooling | Maven  | Dependency management, builds, packaging |
 
+**Why this stack?**
 
-
+- Java offers strong type safety and well-established tooling.  
+- Maven gives clear build lifecycles and dependency resolution.  
+- Decoupling frontend / backend allows independent scaling and flexibility.
 
 ---
+
+## Installation & Setup
+
+### Prerequisites
+
+- Java JDK (version 17 or above)  
+- Maven (or your preferred build tool)  
+- Springboot
+- Use Intellij IDE to get maven and springboot pre installed
+
+### Local Setup
+
+1. **Clone the repository**
+
+   ```bash
+   git clone https://github.com/neetikaneupane/typespeed.git
+   cd typespeed
+
+2. Configure environment variables / properties
+
+Create application.properties (or application.yml) in the backend/src/main/resources/ directory (or appropriate location):
+```bash
+spring.datasource.url=jdbc:mysql://localhost:3306/typespeed_db
+spring.datasource.username=your_db_user
+spring.datasource.password=your_db_password
+spring.jpa.hibernate.ddl-auto=update
+```
+---
+
+## Roadmap
+| Milestone                                | Status      | Notes                    |
+| ---------------------------------------- | ----------- | ------------------------ |
+| Basic typing test                        | ✅ Complete  | Core logic working       |
+| User authentication & result persistence | In progress | Save user history        |
+| Dark / Light mode                        | ✅ Complete  | UI toggle                |
+| Multiplayer / Competition mode           | Planned     | Real-time typing battles |
+| Mobile app version                       | Planned     | React Native / Flutter   |
+| Leaderboards / Social features           | Planned     | Share scores & compete   |
+
+
+
+
+
