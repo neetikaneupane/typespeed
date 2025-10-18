@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>Sign Up - Typespeed</title>
-    <link rel="stylesheet" href="signup.css" />
+    <link rel="stylesheet" href="login.css" />
 </head>
 <body>
 <header>
@@ -20,40 +20,83 @@
     <h1>Typespeed</h1>
 </header>
 
-<div class="container" style="margin-top: 100px;">
-    <div class="auth-container">
-        <div class="auth-header">
-            <h2>Create Account</h2>
-            <p>Start tracking your typing progress today</p>
+<div class="auth-wrapper">
+    <div class="info-section">
+        <div class="info-content">
+            <h2>Start Your<br/>Typing Journey</h2>
+            <p>Create your free account today and unlock powerful tools to improve your typing speed and accuracy. No credit card required.</p>
+
+            <ul class="feature-list">
+                <li class="feature-item">
+                    <span class="feature-icon">✓</span>
+                    <span>Personalized typing tests and challenges</span>
+                </li>
+                <li class="feature-item">
+                    <span class="feature-icon">✓</span>
+                    <span>Detailed progress analytics and insights</span>
+                </li>
+                <li class="feature-item">
+                    <span class="feature-icon">✓</span>
+                    <span>Compare your stats with other users</span>
+                </li>
+                <li class="feature-item">
+                    <span class="feature-icon">✓</span>
+                    <span>Free forever, no hidden fees</span>
+                </li>
+            </ul>
+
+            <div class="stats-grid">
+                <div class="stat-box">
+                    <div class="stat-number">3x</div>
+                    <div class="stat-label">Faster Learning</div>
+                </div>
+                <div class="stat-box">
+                    <div class="stat-number">100%</div>
+                    <div class="stat-label">Free to Use</div>
+                </div>
+                <div class="stat-box">
+                    <div class="stat-number">24/7</div>
+                    <div class="stat-label">Available</div>
+                </div>
+            </div>
         </div>
+    </div>
 
-        <div id="error-message" class="error-message"></div>
-        <div id="success-message" class="success-message"></div>
+    <div class="form-section">
+        <div class="auth-container">
+            <div class="auth-header">
+                <h2>Create Account</h2>
+                <p>Start tracking your typing progress today</p>
+            </div>
 
-        <form id="signup-form">
-            <div class="form-group">
-                <label for="username">Username</label>
-                <input type="text" id="username" name="username" required minlength="3" maxlength="20" />
-                <div class="password-hint">3-20 characters</div>
-            </div>
-            <div class="form-group">
-                <label for="email">Email</label>
-                <input type="email" id="email" name="email" required />
-            </div>
-            <div class="form-group">
-                <label for="password">Password</label>
-                <input type="password" id="password" name="password" required minlength="6" />
-                <div class="password-hint">At least 6 characters</div>
-            </div>
-            <div class="form-group">
-                <label for="confirmPassword">Confirm Password</label>
-                <input type="password" id="confirmPassword" name="confirmPassword" required />
-            </div>
-            <button type="submit" class="btn-primary" id="signup-btn">Create Account</button>
-        </form>
+            <div id="error-message" class="error-message"></div>
+            <div id="success-message" class="success-message"></div>
 
-        <div class="auth-footer">
-            <p>Already have an account? <a href="login.html">Sign in</a></p>
+            <form id="signup-form">
+                <div class="form-group">
+                    <label for="username">Username</label>
+                    <input type="text" id="username" name="username" placeholder="Choose a username" required minlength="3" maxlength="20" />
+                    <div class="password-hint">3-20 characters</div>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" placeholder="Enter your email" required />
+                </div>
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" name="password" placeholder="Create a password" required minlength="6" />
+                    <div class="password-hint">At least 6 characters</div>
+                </div>
+                <div class="form-group">
+                    <label for="confirmPassword">Confirm Password</label>
+                    <input type="password" id="confirmPassword" name="confirmPassword" placeholder="Confirm your password" required />
+                </div>
+                <button type="submit" class="btn-primary" id="signup-btn">Create Account</button>
+            </form>
+
+            <div class="auth-footer">
+                <p>Already have an account? <a href="login.html">Sign in</a></p>
+            </div>
         </div>
     </div>
 </div>
