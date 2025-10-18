@@ -28,7 +28,7 @@ Key objectives:
 ---
 ## Demo
 
-This project was made Intellij IDE, so i would suggest you to run it using intellij and run the TypingSpeedTestApplication File.
+
 **State**
 <img width="1895" height="786" alt="image" src="https://github.com/user-attachments/assets/9e5d3118-3c30-4fcc-b717-6427a532cfe4" />
 <img width="1865" height="798" alt="image" src="https://github.com/user-attachments/assets/fb0eb645-f76c-4774-9e29-9da2ada8f4d6" />
