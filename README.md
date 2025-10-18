@@ -30,8 +30,8 @@ Key objectives:
 
 This project was made Intellij IDE, so i would suggest you to run it using intellij and run the TypingSpeedTestApplication File.
 **State**
-<img width="1909" height="812" alt="image" src="https://github.com/user-attachments/assets/1089f0da-88fe-462a-856e-b6804d654a9a" />
-<img width="1873" height="791" alt="image" src="https://github.com/user-attachments/assets/8a2020c3-9fc6-49dd-addb-68da0daeb097" />
+<img width="1895" height="786" alt="image" src="https://github.com/user-attachments/assets/9e5d3118-3c30-4fcc-b717-6427a532cfe4" />
+<img width="1865" height="798" alt="image" src="https://github.com/user-attachments/assets/fb0eb645-f76c-4774-9e29-9da2ada8f4d6" />
 <img width="1886" height="705" alt="image" src="https://github.com/user-attachments/assets/904ebaf4-9cf3-4dbd-a174-cfec18d7679a" />
 <img width="1871" height="828" alt="image" src="https://github.com/user-attachments/assets/680b078a-4a90-4de1-a049-af788b24aee7" />
 <img width="1719" height="712" alt="image" src="https://github.com/user-attachments/assets/a9adedf9-e2a1-4c90-9de1-06a34d44fb28" />
